@@ -25,7 +25,7 @@
   float: right;
   margin: -10px 0 -5px 4px;
   height: 15px;
-  color: rgba(0,0,0,0.45);
+  color: rgba(0, 0, 0, 0.45);
   font-size: 11px;
   line-height: 15px;
   white-space: nowrap;
@@ -35,4 +35,18 @@
 }
 .w-50 {
   width: 50%;
+}
+.conv__msg__status {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.conv__msg__status div {
+  padding: 5px 12px 6px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.19);
+  background-color: #463261;
+  border-radius: 7.5px;
+  color: #fff;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.19);
 }

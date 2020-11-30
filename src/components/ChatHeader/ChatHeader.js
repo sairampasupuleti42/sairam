@@ -6,6 +6,7 @@ import about from "./../../assets/about.png";
 import skills from "./../../assets/skills.png";
 import education from "./../../assets/education.png";
 import experience from "./../../assets/experience.png";
+import { Link } from "react-router-dom";
 export default function ChatHeader({
   data,
   showName,
@@ -15,18 +16,22 @@ export default function ChatHeader({
   getNewZIndex,
   avatar,
   mobileResTitle,
+  wip,
 }) {
   const [dropdown, openDropdown] = useState(false);
   return (
     <div className="chat__header">
-      {!showName ? (
-        <img className="avatar" src={data?.avatar} />
-      ) : (
-        <img className="avatar" src={getRouteIcon(title)} />
-      )}
+      <Link to="/">
+        {!showName ? (
+          <img className="avatar" src={data?.avatar} />
+        ) : (
+          <img className="avatar" src={getRouteIcon(title)} />
+        )}
+      </Link>
       <div className="chat__header__content">
         {showName ? <div className="title">{title}</div> : ""}
         {mobileResTitle ? <div className="title2">{mobileResTitle}</div> : ""}
+        {wip ? <p className="wip">Implementing...</p> : ""}
       </div>
       {showButton ? (
         <div className="chat__header__menu">

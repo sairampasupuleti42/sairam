@@ -25,7 +25,8 @@ JavaScript & HTML
 applications by following reverse-engineering process`,
       `Conducting investigations to catch, enfore our product policies,<br/> abuse patterns, and identifying product vulnerabilities`,
     ],
-    optional: "Dec 2019 to Present",
+    optional: {
+      exp_stamp: "Latest",exp_text:"Dec 2019 to Present"},
   },
   {
     qus: `Programmer Analyst
@@ -65,7 +66,10 @@ agile development`,
       `Coordinating with onsite development team for delivery<br/>
 quality solutions`,
     ],
-    optional: "Oct 2018 – Dec 2019",
+    optional: {
+      exp_stamp: "1 Year ago",
+      exp_text: "Oct 2018 – Dec 2019",
+    },
   },
   {
     qus: `<i>Software Engineer</i>
@@ -79,7 +83,10 @@ quality solutions`,
       `Involved in design development and<br/> testing of multiple web applications.`,
       `Used Agile development methodology<br/> for maximum flexibility with changing client requirements `,
     ],
-    optional: "12/2016 – 09/2018",
+    optional: {
+      exp_stamp: "2 Year ago",
+      exp_text: "12/2016 – 09/2018",
+    },
   },
   {
     qus: `<i>Software Developer</i>
@@ -92,7 +99,7 @@ quality solutions`,
       `Developed internal company web applications in PHP `,
       `Managed projects independently from start to finish`,
     ],
-    optional: "06/2016 – 11/2016",
+    optional: { exp_stamp: "4 years ago", exp_text: "06/2016 – 11/2016" },
   },
 ];
 export default function Experience() {

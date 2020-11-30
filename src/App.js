@@ -16,6 +16,7 @@ import Skills from "./components/Skills/Skills";
 import ChatHeader from "./components/ChatHeader/ChatHeader";
 import Default from "./components/Default";
 import { isMobile } from "react-device-detect";
+import Works from "./components/Works/Works";
 export default function App() {
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
@@ -38,10 +39,10 @@ export default function App() {
           <header className="app__header">
             <div className="unknown__class_in_header">
               <div className="intro__quote__div">
-                {!home ? (
+                {!home  ? (
                   <h1 className="intro__quote">Sairam Pasupuleti</h1>
                 ) : (
-                  ""
+                  isMobile ? <h1 className="intro__quote">Sairam Pasupuleti</h1>:""
                 )}
               </div>
             </div>
@@ -65,16 +66,8 @@ export default function App() {
                     zIndex: zIndexValue,
                   }}
                 >
-                  <Route path="/ss">
-                    <ChatHeader
-                      data={leftHeader}
-                      showName={true}
-                      avatar={true}
-                      showButton={true}
-                      title="Sairam Pasupuleti"
-                      handleIntroClick={catchIntroClick}
-                      getNewZIndex={handleMobileTouch}
-                    />
+                  <Route path="/" exact>
+                  
                     <div className="app__conversation">
                       <Default />
                     </div>
@@ -130,6 +123,21 @@ export default function App() {
                     />{" "}
                     <div className="app__conversation">
                       <Skills />
+                    </div>
+                  </Route>
+                  
+                  <Route path="/works">
+                    <ChatHeader
+                      data={leftHeader}
+                      showName={true}
+                      showButton={true}
+                      title="Works"
+                      handleIntroClick={catchIntroClick}
+                      getNewZIndex={handleMobileTouch}
+                      wip={true}
+                    />{" "}
+                    <div className="app__conversation">
+                      <Works />
                     </div>
                   </Route>
                 </div>
