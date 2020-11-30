@@ -46,7 +46,7 @@ export default function App() {
               </div>
             </div>
           </header>
-          <div className="app__body"  style={home ? { height: "100vh", width: "100vw", top: "0" } : {}}>
+          <div className="app__body"  style={home ? { height: "92vh", width: "90vw", top: "0" } : {}}>
             {home ? (
               <div className="app__container">
                 <div className="app__rooms">
