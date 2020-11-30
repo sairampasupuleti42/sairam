@@ -1,0 +1,11 @@
+.message__container {
+    position: relative;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgb(243, 240, 240);
+    border-radius: 15px;
+    width: fit-content;
+    margin-top: 25px;
+  }
+  

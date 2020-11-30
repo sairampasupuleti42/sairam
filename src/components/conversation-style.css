@@ -1,0 +1,32 @@
+.conversation__style__container {
+    position: relative;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: rgb(243, 240, 240);
+    border-radius: 15px;
+    margin-top: 15px;
+  }
+  .right {
+    margin-left: auto;
+    background-color: #c5ff99;
+    width: fit-content;
+  }
+  .left {
+    max-width: 75%;
+    width: fit-content;
+  }
+  .conversation__style__container span {
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    font-size: small;
+    margin-bottom: 5px;
+  }
+  .msg_container:last-child {
+     margin-bottom: 11.5%; 
+  }
+  .w-50 {
+    width: 50%;
+  }
+  
