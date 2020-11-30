@@ -12,13 +12,17 @@ export default function ChatHeader({
   showButton,
   title,
   handleIntroClick,
-  getNewZIndex
+  getNewZIndex,
+  avatar
 }) {
   const [dropdown, openDropdown] = useState(false);
   return (
     <div className="chat__header">
-     { !showName ? 
-      <img className="avatar" src={data?.avatar} /> : <img className="avatar" src={getRouteIcon(title)} />}
+     {
+     !showName ? 
+      <img className="avatar" src={data?.avatar} /> : <img className="avatar" src={getRouteIcon(title)} />
+      
+    }
       <div className="chat__header__content">
         {showName ? <div className="title">{title}</div> : ""}
       </div>

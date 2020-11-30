@@ -14,6 +14,7 @@ import Experience from "./components/Experience/Experience";
 import Education from "./components/Education/Education";
 import Skills from "./components/Skills/Skills";
 import ChatHeader from "./components/ChatHeader/ChatHeader";
+import Default from "./components/Default";
 export default function App() {
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
@@ -37,7 +38,7 @@ export default function App() {
             <div className="unknown__class_in_header">
               <div className="intro__quote__div">
                 {!home ? (
-                  <h2 className="intro__quote">Sairam Pasupuleti</h2>
+                  <h1 className="intro__quote">Sairam Pasupuleti</h1>
                 ) : (
                   ""
                 )}
@@ -46,7 +47,7 @@ export default function App() {
           </header>
           <div
             className="app__body"
-            style={home ? { height: "90vh", width: "85.5vw", top: "0" } : {}}
+           
           >
             {home ? (
               <div className="app__container">
@@ -64,7 +65,20 @@ export default function App() {
                   style={{
                     zIndex: zIndexValue
                   }}
-                >
+                > <Route path="/">
+                    <ChatHeader
+                      data={leftHeader}
+                      showName={true}
+                      avatar={true}
+                      showButton={true}
+                      title="Sairam Pasupuleti"
+                      handleIntroClick={catchIntroClick}
+                      getNewZIndex={handleMobileTouch}
+                    />
+                    <div className="app__conversation">
+                      <Default />
+                    </div>
+                  </Route>
                   <Route path="/about-me">
                     <ChatHeader
                       data={leftHeader}

@@ -35,7 +35,6 @@ body {
 .intro__quote__author {
   font-size: small;
 }
-
 .app__body {
   width: 65.5vw;
   height: 56vh;
@@ -59,6 +58,7 @@ body {
   right: 0;
   z-index: 9;
   overflow: hidden;
+  width: 20vw;
 }
 .app__room_area {
   flex: 1;
@@ -77,45 +77,15 @@ body {
   margin: 27px auto 28px;
   margin-bottom: 66px;
 }
-@media screen and (max-width: 992px) {
-  .app__body {
-    width: 78.5vw;
-  }
-}
+
 @media screen and (min-width: 1200px) {
   .app__body {
-    height: 60vh;
+    height: 65vh;
     width: 60vw;
   }
 }
-@media screen and (max-width: 768px) {
-  .unknown__class_in_header {
-    margin: 27px 7px 30px !important;
-  }
-  .unknown__class_in_header .intro__quote {
-    font-size: 18px !important;
-  }
-  .intro__top {
-    flex-direction: column !important;
-  }
-  .intro__profile {
-    padding: 40px 45px 0px !important;
-  }
-  .intro__profile .title {
-    font-size: 17px !important;
-    margin-bottom: 15px;
-  }
-  .intro__profile .extra ol li {
-    line-height: 1.6 !important;
-  }
-  .intro__bottom {
-    padding: 0;
-    flex-direction: column;
-  }
-  .intro__bottom .intro__continue {
-    background: #463261;
-    color: #fff;
-  }
+@media screen and (max-width: 992px) {
+ 
   .app {
     display: flow-root;
     overflow-x: hidden !important;
@@ -123,11 +93,13 @@ body {
   .app__header {
     position: relative;
     height: auto;
+    text-align: center;
   }
   .app__body {
-    width: 100vw !important;
     height: 100% !important;
+    width: 100vw;
     top: 0 !important;
+    margin: auto;
   }
   .app__rooms {
     width: 100%;

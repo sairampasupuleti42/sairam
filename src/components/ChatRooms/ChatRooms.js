@@ -4,6 +4,7 @@ import about from "./../../assets/about.png";
 import skills from "./../../assets/skills.png";
 import education from "./../../assets/education.png";
 import experience from "./../../assets/experience.png";
+import works from "./../../assets/works.png";
 
 import "./ChatRooms.css";
 export default function ChatRooms({ getClickForMobileAction }) {
@@ -19,27 +20,35 @@ export default function ChatRooms({ getClickForMobileAction }) {
     {
       name: "Experience",
       message: "",
-      timestamp: "Years of exp",
+      timestamp: "Exp",
       unread: 4,
       path: "experience",
       icon: experience,
     },
     {
       name: "Education",
-      message: "okay",
-      timestamp: "Percentage",
+      message: "",
+      timestamp: "%",
       unread: 65,
       path: "education",
       icon: education,
     },
     {
       name: "Skills",
-      message: "working as expected",
+      message: "",
       timestamp: "",
       unread: 21,
       path: "skills",
       icon: skills,
     },
+    {
+      name: "Works",
+      message: "",
+      timestamp: "",
+      unread: 21,
+      path: "works",
+      icon: works,
+    }
   ];
   return (
     <div className="chat__rooms">
