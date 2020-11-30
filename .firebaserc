@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "p-sairam"
+  },
+  "targets": {
+    "p-sairam": {
+      "hosting": {
+        "target-name": [
+          "site-name"
+        ],
+        "app": [
+          "p-sairam"
+        ]
+      }
+    }
   }
 }
