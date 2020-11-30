@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./ChatHeader.css";
 import { FaEllipsisV } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
-import about from "./../../assets/about.png"
-import skills from "./../../assets/skills.png"
-import education from "./../../assets/education.png"
-import experience from "./../../assets/experience.png"
+import about from "./../../assets/about.png";
+import skills from "./../../assets/skills.png";
+import education from "./../../assets/education.png";
+import experience from "./../../assets/experience.png";
 export default function ChatHeader({
   data,
   showName,
@@ -13,18 +13,20 @@ export default function ChatHeader({
   title,
   handleIntroClick,
   getNewZIndex,
-  avatar
+  avatar,
+  mobileResTitle,
 }) {
   const [dropdown, openDropdown] = useState(false);
   return (
     <div className="chat__header">
-     {
-     !showName ? 
-      <img className="avatar" src={data?.avatar} /> : <img className="avatar" src={getRouteIcon(title)} />
-      
-    }
+      {!showName ? (
+        <img className="avatar" src={data?.avatar} />
+      ) : (
+        <img className="avatar" src={getRouteIcon(title)} />
+      )}
       <div className="chat__header__content">
         {showName ? <div className="title">{title}</div> : ""}
+        {mobileResTitle ? <div className="title2">{mobileResTitle}</div> : ""}
       </div>
       {showButton ? (
         <div className="chat__header__menu">
@@ -39,14 +41,14 @@ export default function ChatHeader({
               {isMobile && getNewZIndex ? (
                 <li>
                   {" "}
-                  <span onClick={goBack}>Go Back</span>
+                  <span onClick={goBack}>Back</span>
                 </li>
               ) : (
                 ""
               )}
               <li>
                 {" "}
-                <span onClick={gotoIntro}>Go to Intro page</span>
+                <span onClick={gotoIntro}>Home</span>
               </li>
             </ul>
           </div>
@@ -67,18 +69,17 @@ export default function ChatHeader({
     getNewZIndex(false);
   }
   function getRouteIcon(param) {
-    switch(param) {
-      case 'About Me':
+    switch (param) {
+      case "About Me":
         return about;
-        case 'Skills':
-          return skills;
-        case 'Education':
+      case "Skills":
+        return skills;
+      case "Education":
         return education;
-        case 'Experience':
-          return experience;
+      case "Experience":
+        return experience;
       default:
         return about;
     }
   }
-  
 }

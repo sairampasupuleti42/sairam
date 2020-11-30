@@ -1,5 +1,11 @@
 * {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -23,7 +29,7 @@ body {
 }
 
 .intro__quote__div {
-  width: 991px;
+  width: 952px;
 }
 .intro__quote {
   color: #fff;
@@ -69,32 +75,35 @@ body {
   height: 100%;
   background-color: #dddbd1;
   overflow-y: scroll;
- 
 }
-
 
 .unknown__class_in_header {
   margin: 27px auto 28px;
   margin-bottom: 66px;
 }
+.chat__header .chat__header__content .title2{
+  display: none;
+}
 
 @media screen and (min-width: 1200px) {
   .app__body {
-    height: 65vh;
-    width: 60vw;
+    height: 35vw;
+    width: 62vw;
+    top: 0;
+  }
+  .msg__container:last-child {
+    margin-bottom: 5% !important;
   }
 }
 @media screen and (max-width: 992px) {
- 
   .app {
     display: flow-root;
     overflow-x: hidden !important;
   }
   .app__header {
-    position: relative;
-    height: auto;
-    text-align: center;
+    display: none;
   }
+  
   .app__body {
     height: 100% !important;
     width: 100vw;
@@ -115,6 +124,68 @@ body {
     z-index: 1;
     height: 100%;
   }
+  .chat__header,
+  .chat__rooms .user .info {
+    padding: 50px 40px !important;
+  }
+  .chat__rooms .user .info {
+    border-bottom: 1px solid rgb(88 88 88 / 19%);
+  }
+  .chat__header .avatar,
+  .chat__rooms .user .info .avatar {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .chat__rooms .user .info .notification .count {
+    width: 75px !important;
+    height: 75px !important;
+    font-size: xxx-large !important;
+    line-height: 1.97;
+  }
+  .chat__rooms .user .info .avatar img {
+    border-radius: 99px !important;
+  }
+  .chat__rooms .user .info .content .name {
+    font-size: xxx-large !important;
+  }
+  .chat__header__menu .button {
+    font-size: xxx-large !important;
+  }
+  .chat__rooms .user .info .notification {
+    place-items: center !important;
+    font-size: xx-large;
+  }
+  .chat__header .chat__header__content  {
+    display: block;
+  }
+  .chat__header__content .title,   .chat__header__content .title2 {
+    font-size: 4em !important;
+
+    line-height: 1.8 !important;
+  }
+  .app__room_area .app__conversation {
+    padding: 40px;
+  }
+  .left {
+    width: 75% !important;
+  }
+  .right {
+    width: 75% !important;
+  }
+  .conversation__style__container {
+    font-size: large !important;
+  }
+  .dropdown-content {
+    width: 50vw !important;
+  }
+  dropdown-content li > a,
+  .dropdown-content li > span {
+    font-size: xxx-large !important;
+    padding: 40px 0 !important;
+  }
+  .msg__container:last-child {
+    margin-bottom: 25% !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -124,4 +195,13 @@ body {
 }
 .app__room_area .app__conversation::-webkit-scrollbar-track {
   background: #463260f0;
+}
+.bg___img {
+  background: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.06;
+  padding: 0;
 }
