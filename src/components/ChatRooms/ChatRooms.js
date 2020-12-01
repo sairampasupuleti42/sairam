@@ -26,14 +26,6 @@ export default function ChatRooms({ getClickForMobileAction }) {
       icon: experience,
     },
     {
-      name: "Education",
-      message: "",
-      timestamp: "",
-      unread: 0,
-      path: "education",
-      icon: education,
-    },
-    {
       name: "Skills",
       message: "",
       timestamp: "",
@@ -48,6 +40,14 @@ export default function ChatRooms({ getClickForMobileAction }) {
       unread: 0,
       path: "works",
       icon: works
+    },
+    {
+      name: "Education",
+      message: "",
+      timestamp: "",
+      unread: 0,
+      path: "education",
+      icon: education,
     },
     {
       name: "Contact",

@@ -4,9 +4,10 @@ export default function Skills() {
   const data = [
     {
       qus: "JavaScript Frameworks/ Libraries / Supersets",
-      multiLine: false,
+      multiLine: true,
       fontWeight: 500,
-      ans: "Angular, React,  Vue.js, JavaScript, AJAX, jQuery, TypeScript"
+      ans: ["Angular, React,  Vue.js, JavaScript, AJAX, jQuery, TypeScript",
+      "Bootstrap, Angular Material, PrimeNG UI components for Angular, AdminLTE, CodeIgniter"]
     },{
       qus: "Web Technologies",
       multiLine: false,
@@ -27,7 +28,7 @@ export default function Skills() {
       qus: "Cloud Platforms / Build tools / DevOps",
       multiLine: false,
       fontWeight: 500,
-      ans: "Git, JIRA, Jenkins, JFrog Artifactory"
+      ans: "Google Cloud, Git, JIRA, Confluence, Jenkins, JFrog Artifactory, IBM UrbanCode Deploy, HP ALM Tool"
     },{
       qus:"Graphical/visualization",
       multiLine: false,

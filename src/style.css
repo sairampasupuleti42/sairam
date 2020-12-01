@@ -77,6 +77,9 @@ body {
   overflow-y: scroll;
 }
 
+.chat__rooms .user .info .avatar img {
+  border-radius: 99px !important;
+}
 .unknown__class_in_header {
   margin: 27px auto 28px;
   margin-bottom: 66px;
@@ -126,7 +129,7 @@ body {
   }
   .chat__header,
   .chat__rooms .user .info {
-    padding: 50px 40px !important;
+    padding: 46px 40px !important;
   }
   .chat__rooms .user .info {
     border-bottom: 1px solid rgb(88 88 88 / 19%);
@@ -144,6 +147,8 @@ body {
   }
   .chat__rooms .user .info .avatar img {
     border-radius: 99px !important;
+    width: 150px !important;
+    height: 150px !important;
   }
   .chat__rooms .user .info .content .name {
     font-size: xxx-large !important;
