@@ -17,6 +17,7 @@ import ChatHeader from "./components/ChatHeader/ChatHeader";
 import Default from "./components/Default";
 import { isMobile } from "react-device-detect";
 import Works from "./components/Works/Works";
+import Contact from "./components/Contact/Contact";
 export default function App() {
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
@@ -138,6 +139,20 @@ export default function App() {
                     />{" "}
                     <div className="app__conversation">
                       <Works />
+                    </div>
+                  </Route>
+                  <Route path="/contact">
+                    <ChatHeader
+                      data={leftHeader}
+                      showName={true}
+                      showButton={true}
+                      title="Contact"
+                      handleIntroClick={catchIntroClick}
+                      getNewZIndex={handleMobileTouch}
+                      wip={true}
+                    />{" "}
+                    <div className="app__conversation">
+                      <Contact />
                     </div>
                   </Route>
                 </div>

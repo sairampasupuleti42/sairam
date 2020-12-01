@@ -6,6 +6,8 @@ import about from "./../../assets/about.png";
 import skills from "./../../assets/skills.png";
 import education from "./../../assets/education.png";
 import experience from "./../../assets/experience.png";
+import works from "./../../assets/works.png";
+import contact from "./../../assets/contact.png";
 import { Link } from "react-router-dom";
 export default function ChatHeader({
   data,
@@ -83,6 +85,10 @@ export default function ChatHeader({
         return education;
       case "Experience":
         return experience;
+      case "Works":
+        return works;
+      case "Contact":
+        return contact;
       default:
         return about;
     }

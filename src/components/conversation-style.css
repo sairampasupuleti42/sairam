@@ -2,7 +2,7 @@
   position: relative;
   font-size: 15px;
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 2%;
   background-color: rgb(243, 240, 240);
   border-radius: 15px;
   margin-top: 15px;
@@ -12,7 +12,7 @@
   margin-left: auto;
   background-color: #c5ff99;
   width: fit-content;
-  min-width: 35%;
+  min-width: 45%;
   max-width: 75%;
 }
 .left {
@@ -31,7 +31,7 @@
   white-space: nowrap;
 }
 .msg_container:last-child {
-  margin-bottom: 11.5%;
+  margin-bottom: 12.5%;
 }
 .w-50 {
   width: 50%;
