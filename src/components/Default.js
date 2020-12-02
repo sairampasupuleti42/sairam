@@ -11,8 +11,8 @@ function Default(props) {
       </div>
       <div className="impl__soon">
           <p> More, will be implemented in the way 🤘</p>
-          <p> Get in touch on <a href="https://www.linkedin.com/in/sairampasupuleti">
-               LinkedIn </a></p>
+          <p> Get in touch on <a target="_blank" href="https://www.linkedin.com/in/sairampasupuleti">
+               <strong>LinkedIn</strong> </a></p>
       </div>
          
     </div>
