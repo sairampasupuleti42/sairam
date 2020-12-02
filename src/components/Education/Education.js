@@ -17,10 +17,10 @@ const data = [
     D.K.N.P Jr College, Board of Intermediate Education, Andhra Pradesh (BIEAP)`,
   },
   {
-    qus: ` Bachelor of Technology
+    qus: ` SSC / Metric
           `,
     multiLine: false,
-    ans: `<strong>SSC / 10th Class / Metric </strong><br/>
+    ans: `<strong>Maths, Social Science & Natural Science</strong><br/>
     Board of Secondary Education, Andhra Pradesh`,
   },
 ];
