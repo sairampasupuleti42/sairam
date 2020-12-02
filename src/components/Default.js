@@ -9,6 +9,12 @@ function Default(props) {
       <div className="default__title">
         <h1>Sairam Pasupuleti</h1>
       </div>
+      <div className="impl__soon">
+          <p> More, will be implemented in the way 🤘</p>
+          <p> Get in touch on <a href="https://www.linkedin.com/in/sairampasupuleti">
+               LinkedIn </p>
+      </div>
+         
     </div>
   );
 }
