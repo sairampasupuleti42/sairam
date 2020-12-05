@@ -9,7 +9,7 @@
     margin-top: 25px;
   }
   .download__resume__button {
-     display: flex,
-     align-items:center,
-     place-content:center
+     display: flex;
+     align-items:center;
+     place-content:center;
 }
