@@ -28,8 +28,7 @@ export default function ChatRoomArea({ data }) {
                   <div className="conversation__style__container left">
                     { 
                   content?.attachment ?
-                     <p style={display: "flex",alignItems:"center",
-place-content:"center"}>
+                     <p className="download__resume__button">
                      
                      {parse(content?.ans)}
                     </p>
