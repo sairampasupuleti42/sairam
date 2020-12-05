@@ -175,7 +175,7 @@ export default function App() {
     showHome(e);
     if (localStorage["c2FpcmFtLXBhc3VwdWxldGk="]) {
       localStorage["c2FpcmFtLXBhc3VwdWxldGk="] = e;
-       window.location.pathname ="/";
+       window.location.href="/";
     }
   }
   function handleMobileTouch(e) {
