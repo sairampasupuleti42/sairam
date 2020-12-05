@@ -23,7 +23,7 @@ export default function About() {
       attachment: true,
       attachment_preview: resume,
       ans :`<img style="opacity:0.2" src=${resume} alt="Sairam">
-<a href="https://drive.google.com/file/d/1Y2J3DHUsc4j79OJx4dJjOUtc6ErS54rk/view?usp=drivesdk" target="_blank" style="position: absolute; padding:20px 30px;
+<a href="https://drive.google.com/uc?export=download&id=1Y2J3DHUsc4j79OJx4dJjOUtc6ErS54rk" style="position: absolute; padding:20px 30px;
 background: #fff;border-radius: 99px; cursor: pointer;
 font-weight:600;color: #585858"> Download </a>`
     },
