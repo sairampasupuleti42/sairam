@@ -95,7 +95,7 @@ body {
     top: 0;
   }
   .msg__container:last-child {
-    margin-bottom: 5% !important;
+    margin-bottom: 9% !important;
   }
 }
 @media screen and (max-width: 992px) {
