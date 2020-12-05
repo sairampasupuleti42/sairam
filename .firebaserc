@@ -1,15 +1,15 @@
 {
   "projects": {
-    "default": "p-sairam"
-  },
+    "default": "dev-sairam"
+  } ,
   "targets": {
-    "p-sairam": {
+    "dev-sairam": {
       "hosting": {
         "target-name": [
           "site-name"
         ],
         "app": [
-          "p-sairam"
+          "dev-sairam"
         ]
       }
     }
