@@ -30,7 +30,7 @@ export default function ChatRoomArea({ data }) {
                   content?.attachment ?
                      <p style={{display: "flex",alignItems:"center",
 place-content:"center"}}>
-                     {
+                     
                      {parse(content?.ans)}
                     </p>
                       :
