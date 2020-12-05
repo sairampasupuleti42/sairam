@@ -26,9 +26,18 @@ export default function ChatRoomArea({ data }) {
                 )}
                 {!content?.multiLine && content?.ans ? (
                   <div className="conversation__style__container left">
+                    { 
+                  content?.attachment ?
+                     <p style={{display: "flex",alignItems:"center",
+place-content:"center"}}>
+                     {
+                     {parse(content?.ans)}
+                    </p>
+                      :
                     <p style={{ fontWeight: content?.fontWeight }}>
                       {parse(content?.ans)}
                     </p>
+                     }
                   </div>
                 ) : (
                   content?.ans?.map((msg, i) => (
