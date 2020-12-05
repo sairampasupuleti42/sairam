@@ -22,7 +22,10 @@ export default function About() {
       multiLine: false,
       attachment: true,
       attachment_preview: resume,
-      ans :`<img src=${resume} alt="Sairam">`
+      ans :`<img style="opacity:0.2" src=${resume} alt="Sairam">
+<a href="#" style="position: absolute; padding:20px 30px;
+background: #fff;border-radius: 99px; cursor: pointer;
+font-weight:600;color: #585858"> Download </a>`
     },
     {
       qus: "Strengths",
