@@ -20,7 +20,7 @@ export default function ChatRooms({ getClickForMobileAction }) {
     {
       name: "Experience",
       message: "",
-      timestamp: "Exp",
+      timestamp: "",
       unread: 4,
       path: "experience",
       icon: experience,
