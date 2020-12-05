@@ -8,4 +8,8 @@
     width: fit-content;
     margin-top: 25px;
   }
-  
+  .download__resume__button {
+     display: flex,
+     align-items:center,
+     place-content:center
+}
