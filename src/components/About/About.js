@@ -22,7 +22,7 @@ export default function About() {
       multiLine: false,
       attachment: true,
       attachment_preview: resume,
-      ans :`<img src=${resume}/>`
+      ans :`<img src=${{resume}}/>`
     },
     {
       qus: "Strengths",
