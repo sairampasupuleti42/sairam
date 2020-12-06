@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import about from "./../../assets/about.png";
 import skills from "./../../assets/skills.png";
 import education from "./../../assets/education.png";
-import experience from "./../../assets/experience.png";import contact from "./../../assets/contact.png";
+import experience from "./../../assets/experience.png";
+import contact from "./../../assets/contact.png";
 import works from "./../../assets/works.png";
 
 import "./ChatRooms.css";
@@ -26,20 +27,20 @@ export default function ChatRooms({ getClickForMobileAction }) {
       icon: experience,
     },
     {
+      name: "Works",
+      message: "",
+      timestamp: "",
+      unread: 0,
+      path: "works",
+      icon: works,
+    },
+    {
       name: "Skills",
       message: "",
       timestamp: "",
       unread: 0,
       path: "skills",
       icon: skills,
-    },
-    {
-      name: "Works",
-      message: "",
-      timestamp: "",
-      unread: 0,
-      path: "works",
-      icon: works
     },
     {
       name: "Education",
@@ -55,7 +56,7 @@ export default function ChatRooms({ getClickForMobileAction }) {
       timestamp: "",
       unread: 0,
       path: "contact",
-      icon: contact
+      icon: contact,
     },
   ];
   return (
