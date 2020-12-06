@@ -8,7 +8,7 @@ export default function Intro(props) {
       <div className="intro__top">
         <div className="intro__profile">
           <div className="title">
-            I'm a creative <b>Java Script</b>Fullstack developer
+            I'm a creative <span className="title__js">JavaScript</span> Fullstack developer
           </div>
           <div className="extra">
             <ol>
@@ -27,7 +27,6 @@ export default function Intro(props) {
       </div>{" "}
       <div className="intro__bottom">
         <div className="intro__getintouch">
-          <div className="text">If you’d like to get in touch ?</div>
         </div>
         <div className="intro__continue" onClick={handleClick}>
           <div className="btn">More info ...</div>

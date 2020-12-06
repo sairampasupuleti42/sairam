@@ -34,7 +34,7 @@
 .intro__bottom {
   display: flex;
   justify-content: space-between;
-  padding: 0px 65px;
+  padding: 0px 30px;
 }
 
 .intro__getintouch {
@@ -79,6 +79,7 @@
   .intro__bottom {
     padding: 0;
     flex-direction: column;
+    
   }
   .intro__bottom .intro__continue {
     background: #463261;
@@ -96,4 +97,11 @@
   .profile_qr img {
     width: 100vw;
   }
+}
+.title__js {
+  font-weight: 500;
+  color: #000000;
+  background-color: #f7e018;
+  letter-spacing: 1px;
+  padding: 0px 5px;
 }

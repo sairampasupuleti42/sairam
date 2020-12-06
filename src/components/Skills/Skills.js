@@ -24,21 +24,41 @@ export default function Skills() {
       multiLine: false,
       fontWeight: 500,
       ans: "Java, C#, PHP"
+    }, {
+      qus: "Cloud Platforms",
+      multiLine: true,
+      fontWeight: 500,
+      ans: ["Google Platforms-Authentication,  Maps, Charts, Analytics, firebase Hosting",
+      "facebook- Login, Instant Articles, Social sharing"]
+    }, {
+      qus: "Build tools/ DevOps",
+      multiLine: true,
+      fontWeight: 500,
+      ans: [
+      "Git, JIRA, Confluence, Jenkins, JFrog Artifactory, IBM UrbanCode Deploy, HP ALM Tool",]
     },{
       qus:"Graphical/visualization",
       multiLine: false,
       fontWeight: 500,
       ans: "Chart.js, D3.js, Google Charts, Highcharts"      
     }, {
-      qus: "Cloud Platforms /Build tools /DevOps/ Others",
+      qus: "Content Management Systems",
       multiLine: true,
       fontWeight: 500,
-      ans: ["Google Cloud, Google APIs, facebook APIs", "Git, JIRA, Confluence, Jenkins, JFrog Artifactory, IBM UrbanCode Deploy, HP ALM Tool", "Content Management System, News web applications, e-commerce solutions", "CCAvenue Payment integration, Invoice/Billing applications, Banking, Financial services"]
+      ans: [
+       "Content Management System, News web applications, e-commerce solutions, Wordpress"]
+    }, {
+      qus: "Others",
+      multiLine: true,
+      fontWeight: 500,
+      ans: [
+       "Agile Scrum Methodology, Environment Categorization, CCAvenue Payment integration, Invoice/Billing applications, Banking, Financial services",
+      "cPanel- Domains, Webmail, ftp"]
     },{
       qus: "IDE/ Editors",
       multiLine: false,
       fontWeight: 500,
-      ans: "PhpStrom, Visual Studio Code, IntelliJ IDEA Community Edition, Notepad++ "
+      ans: "PhpStrom, Visual Studio Code, IntelliJ IDEA Community Edition, FileZilla, Notepad++ "
     }
   ];
   return (
