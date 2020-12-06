@@ -30,7 +30,9 @@ export default function App() {
       avatar:
         "https://scontent.fhyd6-1.fna.fbcdn.net/v/t1.0-1/cp0/p74x74/125879863_520913138867927_6648996237882099823_o.jpg?_nc_cat=103&ccb=2&_nc_sid=dbb9e7&_nc_ohc=JzuYLHhoPlUAX8R7PR1&_nc_ht=scontent.fhyd6-1.fna&tp=27&oh=96b2c97a207a20aaea603425a9dae54b&oe=5FE5DA9D",
       icon: "",
-      sideMenu: {},
+      sideMenu: {
+        
+      },
     });
   }, [localStorage]);
   return (
