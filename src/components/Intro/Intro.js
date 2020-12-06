@@ -8,7 +8,7 @@ export default function Intro(props) {
       <div className="intro__top">
         <div className="intro__profile">
           <div className="title">
-            I'm a creative <b>Fullstack developer</b>
+            I'm a creative <b>Java Script</b>Fullstack developer
           </div>
           <div className="extra">
             <ol>
