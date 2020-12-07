@@ -6,7 +6,7 @@ function Contact({ user }) {
   const [queries, setQueries] = useState();
   useEffect(() => {
     const firestore = firebase.firestore();
-    return firestore.collection("queries").onSnapshot((snapshot) => {
+    return firestore.collection("queries").orderBy("createdAt").onSnapshot((snapshot) => {
       const postData = [];
       snapshot.forEach((doc) => postData.push({ ...doc.data(), id: doc.id }));
       setQueries(postData);
