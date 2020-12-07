@@ -43,11 +43,12 @@ function Footer({ user, onClick }) {
   }
   async function sendQuery(e) {
     e.preventDefault();
-    const { uid, photoURL } = user;
+    const { uid, photoURL, displayName } = user;
     await queriesRef.add({
       text: queryValue,
       uid,
       photoURL,
+      displayName,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     }).then(res=>{
       setQueryValue("");
