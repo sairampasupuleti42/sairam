@@ -2,33 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./Contact.css";
 import ChatRoomArea from "./../ChatRoomArea/ChatRoomArea";
 import firebase from "firebase";
-import "firebase/firestore";
-import "firebase/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-// firebase
-const config = {
-  apiKey: "AIzaSyDLMiQu-IrXiTsrEvFB5xZ4K50H7uZRrY0",
-  authDomain: "p-sairam.firebaseapp.com",
-  databaseURL: "https://p-sairam.firebaseio.com",
-  projectId: "p-sairam",
-  storageBucket: "p-sairam.appspot.com",
-  messagingSenderId: "588750147667",
-  appId: "1:588750147667:web:1e5846afc127d1db6ff6a6",
-  measurementId: "G-NFTF2EBC3H",
-};
-var provider = new firebase.auth.GoogleAuthProvider();
-if (!firebase.apps.length) {
-  firebase.initializeApp(config);
-}
-const auth = firebase.auth();
-// End firebase
-
 function Contact({ user }) {
-  function getQueries() {
-    const snapshot = firebase.firestore().collection("queries").get();
-    console.log(snapshot);
-  }
-  getQueries();
+  const [queries, setQueries] = useState();
+  useEffect(() => {
+    const firestore = firebase.firestore();
+    return firestore.collection("queries").onSnapshot((snapshot) => {
+      const postData = [];
+      snapshot.forEach((doc) => postData.push({ ...doc.data(), id: doc.id }));
+      setQueries(postData);
+    });
+  }, []);
   return (
     <div className="contact">
       {user ? (
@@ -42,7 +25,7 @@ function Contact({ user }) {
             <h1 className="luser__displayName">Hello, {user?.displayName}</h1>
           </div>
           <div>
-            <ChatRoomArea data={[]} chat={true} />
+            <ChatRoomArea user={user} data={queries} chat={true} />
           </div>
         </div>
       ) : (
