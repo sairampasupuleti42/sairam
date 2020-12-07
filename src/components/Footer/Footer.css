@@ -1,0 +1,15 @@
+.contact__chat__btn--signin {
+  display: flex;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-size: 20px;
+  font-weight: normal;
+  background-color: #fff;
+}
+.contact__chat__btn--signin  svg {
+    margin-right: 15px;
+}

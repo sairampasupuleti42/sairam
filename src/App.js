@@ -18,6 +18,7 @@ import Default from "./components/Default";
 import { isMobile } from "react-device-detect";
 import Works from "./components/Works/Works";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 export default function App() {
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
@@ -30,9 +31,7 @@ export default function App() {
       avatar:
         "https://scontent.fhyd6-1.fna.fbcdn.net/v/t1.0-1/cp0/p74x74/125879863_520913138867927_6648996237882099823_o.jpg?_nc_cat=103&ccb=2&_nc_sid=dbb9e7&_nc_ohc=JzuYLHhoPlUAX8R7PR1&_nc_ht=scontent.fhyd6-1.fna&tp=27&oh=96b2c97a207a20aaea603425a9dae54b&oe=5FE5DA9D",
       icon: "",
-      sideMenu: {
-        
-      },
+      sideMenu: {},
     });
   }, [localStorage]);
   return (
@@ -42,15 +41,20 @@ export default function App() {
           <header className="app__header">
             <div className="unknown__class_in_header">
               <div className="intro__quote__div">
-                {!home  ? (
+                {!home ? (
+                  <h1 className="intro__quote">Sairam Pasupuleti</h1>
+                ) : isMobile ? (
                   <h1 className="intro__quote">Sairam Pasupuleti</h1>
                 ) : (
-                  isMobile ? <h1 className="intro__quote">Sairam Pasupuleti</h1>:""
+                  ""
                 )}
               </div>
             </div>
           </header>
-          <div className="app__body"  style={home ? { height: "92vh", width: "90vw", top: "0" } : {}}>
+          <div
+            className="app__body"
+            style={home ? { height: "92vh", width: "90vw", top: "0" } : {}}
+          >
             {home ? (
               <div className="app__container">
                 <div className="app__rooms">
@@ -62,7 +66,6 @@ export default function App() {
                     handleIntroClick={catchIntroClick}
                   />
                   <ChatRooms getClickForMobileAction={handleMobileTouch} />
-                
                 </div>
                 <div
                   className="app__room_area"
@@ -71,10 +74,8 @@ export default function App() {
                   }}
                 >
                   <Route path="/" exact>
-                  
                     <div className="app__conversation">
                       <Default />
-                      
                     </div>
                   </Route>
                   <Route path="/about-me">
@@ -130,7 +131,7 @@ export default function App() {
                       <Skills />
                     </div>
                   </Route>
-                  
+
                   <Route path="/works">
                     <ChatHeader
                       data={leftHeader}
@@ -155,9 +156,18 @@ export default function App() {
                       getNewZIndex={handleMobileTouch}
                       wip={true}
                     />{" "}
-                    <div className="app__conversation">
+                    <div
+                      className="app__conversation"
+                      style={
+                        window.location.pathname == "/contact"
+                          ? { height: "80%" }
+                          : { height: "100%" }
+                      }
+                    >
                       <Contact />
-                      <input placeholder="Enter you input"/>
+                    </div>
+                    <div className="footer">
+                      <Footer/>
                     </div>
                   </Route>
                 </div>
@@ -180,7 +190,7 @@ export default function App() {
     showHome(e);
     if (localStorage["c2FpcmFtLXBhc3VwdWxldGk="]) {
       localStorage["c2FpcmFtLXBhc3VwdWxldGk="] = e;
-       window.location.href="/";
+      window.location.href = "/";
     }
   }
   function handleMobileTouch(e) {
