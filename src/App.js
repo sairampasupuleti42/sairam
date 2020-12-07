@@ -19,7 +19,31 @@ import { isMobile } from "react-device-detect";
 import Works from "./components/Works/Works";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import firebase from "firebase";
+import "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 export default function App() {
+  // firebase
+  const config = {
+    apiKey: "AIzaSyDLMiQu-IrXiTsrEvFB5xZ4K50H7uZRrY0",
+    authDomain: "p-sairam.firebaseapp.com",
+    databaseURL: "https://p-sairam.firebaseio.com",
+    projectId: "p-sairam",
+    storageBucket: "p-sairam.appspot.com",
+    messagingSenderId: "588750147667",
+    appId: "1:588750147667:web:1e5846afc127d1db6ff6a6",
+    measurementId: "G-NFTF2EBC3H",
+  };
+  var provider = new firebase.auth.GoogleAuthProvider();
+  if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+  }
+  const auth = firebase.auth();
+  const [user] = useAuthState(auth);
+  async function requestSignIn() {
+    await firebase.auth().signInWithPopup(provider);
+  }
+  // End firebase
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
   const [leftHeader, setLeftHeader] = useState(null);
@@ -30,8 +54,7 @@ export default function App() {
     setLeftHeader({
       avatar:
         "https://scontent.fhyd6-1.fna.fbcdn.net/v/t1.0-1/cp0/p74x74/125879863_520913138867927_6648996237882099823_o.jpg?_nc_cat=103&ccb=2&_nc_sid=dbb9e7&_nc_ohc=JzuYLHhoPlUAX8R7PR1&_nc_ht=scontent.fhyd6-1.fna&tp=27&oh=96b2c97a207a20aaea603425a9dae54b&oe=5FE5DA9D",
-      icon: "",
-      sideMenu: {},
+      icon: ""
     });
   }, [localStorage]);
   return (
@@ -155,19 +178,21 @@ export default function App() {
                       handleIntroClick={catchIntroClick}
                       getNewZIndex={handleMobileTouch}
                       wip={true}
+                      showLogoutButton = {user?.uid ? true :  false}
+                      logoutAction={handleLogout}
                     />{" "}
                     <div
                       className="app__conversation"
                       style={
                         window.location.pathname == "/contact"
                           ? { height: "80%" }
-                          : { height: "100%" }
+                          : {}
                       }
                     >
-                      <Contact />
+                      <Contact user={user} />
                     </div>
                     <div className="footer">
-                      <Footer/>
+                      <Footer onClick={requestSignIn} user={user} />
                     </div>
                   </Route>
                 </div>
@@ -182,6 +207,9 @@ export default function App() {
       </Router>
     </div>
   );
+  function handleLogout() {
+    auth.signOut();
+  }
   function moveToHome(e) {
     localStorage["c2FpcmFtLXBhc3VwdWxldGk="] = e;
     showHome(e);

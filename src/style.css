@@ -126,7 +126,7 @@ body {
   }
   .chat__header,
   .chat__rooms .user .info {
-    padding: 24px 40px !important;
+    padding: 10px 15px !important;
   }
   .chat__rooms .user .info {
     border-bottom: 1px solid rgb(88 88 88 / 19%);

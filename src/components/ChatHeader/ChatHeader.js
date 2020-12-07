@@ -19,8 +19,11 @@ export default function ChatHeader({
   avatar,
   mobileResTitle,
   wip,
+  logoutAction,
+  showLogoutButton,
 }) {
   const [dropdown, openDropdown] = useState(false);
+
   return (
     <div className="chat__header">
       <Link to="/">
@@ -57,6 +60,13 @@ export default function ChatHeader({
                 {" "}
                 <span onClick={gotoIntro}>Home</span>
               </li>
+              {showLogoutButton ? (
+                <li>
+                  <span onClick={fireSignout}>Sign out</span>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
         </div>
@@ -75,6 +85,9 @@ export default function ChatHeader({
   function goBack() {
     getNewZIndex(false);
   }
+  function fireSignout() {
+    logoutAction(true)
+  }   
   function getRouteIcon(param) {
     switch (param) {
       case "About Me":

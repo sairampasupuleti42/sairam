@@ -1,0 +1,21 @@
+.luser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.luser .luser__photoURL {
+  width: 32px;
+  height: 32px;
+  border-radius: 99px;
+}
+.luser .luser__displayName {
+  font-weight: normal;
+}
+.tempCSS {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
