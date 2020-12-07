@@ -62,6 +62,7 @@ export default function App() {
                     handleIntroClick={catchIntroClick}
                   />
                   <ChatRooms getClickForMobileAction={handleMobileTouch} />
+                
                 </div>
                 <div
                   className="app__room_area"
@@ -73,6 +74,7 @@ export default function App() {
                   
                     <div className="app__conversation">
                       <Default />
+                      
                     </div>
                   </Route>
                   <Route path="/about-me">
@@ -155,6 +157,7 @@ export default function App() {
                     />{" "}
                     <div className="app__conversation">
                       <Contact />
+                      <input placeholder="Enter you input"/>
                     </div>
                   </Route>
                 </div>

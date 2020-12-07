@@ -98,13 +98,10 @@ body {
     margin-bottom: 9% !important;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .app {
     display: flow-root;
     overflow-x: hidden !important;
-  }
-  .app__header {
-    display: none;
   }
 
   .app__body {
@@ -129,12 +126,12 @@ body {
   }
   .chat__header,
   .chat__rooms .user .info {
-    padding: 46px 40px !important;
+    padding: 24px 40px !important;
   }
   .chat__rooms .user .info {
     border-bottom: 1px solid rgb(88 88 88 / 19%);
   }
-  .chat__header .avatar,
+  /* .chat__header .avatar,
   .chat__rooms .user .info .avatar {
     width: 150px !important;
     height: 150px !important;
@@ -144,22 +141,17 @@ body {
     height: 75px !important;
     font-size: xxx-large !important;
     line-height: 1.97;
-  }
+  } */
   .chat__rooms .user .info .avatar img {
     border-radius: 99px !important;
-    width: 150px !important;
-    height: 150px !important;
   }
-  .chat__rooms .user .info .content .name {
+  /* .chat__rooms .user .info .content .name {
     font-size: xxx-large !important;
-  }
-  .chat__header__menu .button {
-    font-size: xxx-large !important;
-  }
+  } */
+  
   .chat__rooms .user .info .notification {
     place-items: center !important;
-    font-size: xx-large;
-  }
+    }
   .chat__header .chat__header__content {
     display: flex;
     flex-direction: column;
@@ -167,12 +159,12 @@ body {
     justify-content: center;
     min-width: 0;
   }
-  .chat__header__content .title,
+  /* .chat__header__content .title,
   .chat__header__content .title2 {
     font-size: 4em !important;
 
     line-height: 1.8 !important;
-  }
+  } */
   .app__room_area .app__conversation {
     padding: 40px;
   }
@@ -188,16 +180,13 @@ body {
   .dropdown-content {
     width: 50vw !important;
   }
-  dropdown-content li > a,
+  /* dropdown-content li > a,
   .dropdown-content li > span {
     font-size: xxx-large !important;
     padding: 40px 0 !important;
-  }
+  } */
   .msg__container:last-child {
     margin-bottom: 25% !important;
-  }
-  .wip {
-    font-size: xx-large !important;
   }
 }
 

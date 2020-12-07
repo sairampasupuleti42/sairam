@@ -8,13 +8,13 @@ export default function Intro(props) {
       <div className="intro__top">
         <div className="intro__profile">
           <div className="title">
-            I'm a creative <span className="title__js">JavaScript</span> Fullstack developer
+            I'm a creative <span className="title__js">JavaScript</span> developer
           </div>
           <div className="extra">
-            <ol>
-              <li>Interested in the entire frontend spectrum</li>
-              <li>I write code and improve my design and skills every day.</li>
-            </ol>
+            <div>
+              <div className="fs-20">Interested in the entire frontend spectrum</div>
+              <div className="fs-20">I write code and improve my design and skills every day.</div>
+            </div>
           </div>
         </div>
 
@@ -29,7 +29,7 @@ export default function Intro(props) {
         <div className="intro__getintouch">
         </div>
         <div className="intro__continue" onClick={handleClick}>
-          <div className="btn">More info ...</div>
+          <div className="btn">Getting Started !</div>
         </div>
       </div>
     </div>
