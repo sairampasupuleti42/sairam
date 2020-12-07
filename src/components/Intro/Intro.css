@@ -56,7 +56,16 @@
   color: #fff;
   transition: 0.5s;
 }
-
+@media screen and (max-width: 1400px) {
+  .intro__bottom {
+    padding: 0 25px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .intro__bottom {
+    padding: 0 50px;
+  }
+}
 @media screen and (max-width: 992px) {
   .unknown__class_in_header .intro__quote {
     font-size: 2em !important;
@@ -75,7 +84,7 @@
     margin-bottom: 30px !important;
   }
   .app__header {
-    display: block;
+    display: none;
     position: relative;
     height: 100px;
   }

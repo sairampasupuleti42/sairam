@@ -8,12 +8,17 @@ export default function Intro(props) {
       <div className="intro__top">
         <div className="intro__profile">
           <div className="title">
-            I'm a creative <span className="title__js">JavaScript</span> developer
+            {isMobile ? <strong>Sairam Pasupuleti</strong> : "I'm a creative"}{" "}
+            <span className="title__js">JavaScript</span> developer
           </div>
           <div className="extra">
             <div>
-              <div className="fs-20">Interested in the entire frontend spectrum</div>
-              <div className="fs-20">I write code and improve my design and skills every day.</div>
+              <div className="fs-20">
+                Interested in the entire frontend spectrum
+              </div>
+              <div className="fs-20">
+                I write code and improve my design and skills every day.
+              </div>
             </div>
           </div>
         </div>
@@ -26,8 +31,7 @@ export default function Intro(props) {
         </div>
       </div>{" "}
       <div className="intro__bottom">
-        <div className="intro__getintouch">
-        </div>
+        <div className="intro__getintouch"></div>
         <div className="intro__continue" onClick={handleClick}>
           <div className="btn">Getting Started !</div>
         </div>
