@@ -87,7 +87,6 @@ export default function ChatRooms({ getClickForMobileAction }) {
     </div>
   );
   function handleClick() {
-    console.log("Menu Item Cliked");
     getClickForMobileAction(true);
   }
 }
