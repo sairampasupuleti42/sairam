@@ -16,7 +16,7 @@ function Footer({ user, onClick }) {
   return (
     <div>
       {!user ? (
-        <div className="footer">
+        <div>
           <button className="btn--signin" onClick={handleChatSignIn}>
             <img src={glogo} alt="Google Logo" className="btn--icon" />
             Sign in with Google
