@@ -192,9 +192,7 @@ const location = useLocation();
                       wip={true}
                       showLogoutButton = {user?.uid ? true :  false}
                       logoutAction={handleLogout}
-                    />{
-detectChange();
-}
+                    />
                     <div
                       className="app__conversation"
                       style={
