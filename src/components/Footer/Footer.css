@@ -25,3 +25,6 @@
   border: none;
   line-height: 2;
 }
+.footer .btn--send {
+display: none;
+}
