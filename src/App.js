@@ -60,15 +60,7 @@ export default function App() {
       icon: ""
     });
   }, [localStorage]);
-function detectChange(){
-const location = useLocation();
-   useEffect(()=> {
-       const y = window.location.pathname =='/contact'
-       setFoo(y ? 80:100);
-      
-},[location]);
- console.log(foo);
-}
+
   return (
     <div>
       <Router>
