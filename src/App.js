@@ -5,6 +5,7 @@ import {
   Route,
   Link,
   useHistory,
+useLocation
 } from "react-router-dom";
 import "./style.css";
 import ChatRooms from "./components/ChatRooms/ChatRooms";
@@ -44,9 +45,11 @@ export default function App() {
     await firebase.auth().signInWithPopup(provider);
   }
   // End firebase
+const location = useLocation();
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
   const [leftHeader, setLeftHeader] = useState(null);
+  const [foo,setFoo] = useState("");
   useEffect(() => {
     localStorage["c2FpcmFtLXBhc3VwdWxldGk="] === "true"
       ? showHome(true)
@@ -57,6 +60,12 @@ export default function App() {
       icon: ""
     });
   }, [localStorage]);
+   useEffect(()=> {
+       const y = window.location.pathname =='/contact'
+       setFoo(y ? 80:100);
+      
+},[location]);
+ console.log(foo);
   return (
     <div>
       <Router>
