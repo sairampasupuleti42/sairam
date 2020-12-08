@@ -45,7 +45,7 @@ export default function App() {
     await firebase.auth().signInWithPopup(provider);
   }
   // End firebase
-const location = useLocation();
+  
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
   const [leftHeader, setLeftHeader] = useState(null);
@@ -60,12 +60,15 @@ const location = useLocation();
       icon: ""
     });
   }, [localStorage]);
+function detectChange(){
+const location = useLocation();
    useEffect(()=> {
        const y = window.location.pathname =='/contact'
        setFoo(y ? 80:100);
       
 },[location]);
  console.log(foo);
+}
   return (
     <div>
       <Router>
@@ -189,7 +192,9 @@ const location = useLocation();
                       wip={true}
                       showLogoutButton = {user?.uid ? true :  false}
                       logoutAction={handleLogout}
-                    />{" "}
+                    />{
+detectChange();
+}
                     <div
                       className="app__conversation"
                       style={
