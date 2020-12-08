@@ -69,10 +69,11 @@ body {
 .app__room_area {
   flex: 1;
   overflow: hidden;
+background-color: #dddbd1;
 }
 .app__room_area .app__conversation {
   padding: 25px !important;
-  height: 100%;
+  height: 80%;
   background-color: #dddbd1;
   overflow-y: scroll;
 }
