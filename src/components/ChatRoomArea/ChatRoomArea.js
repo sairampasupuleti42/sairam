@@ -3,7 +3,6 @@ import parse from "html-react-parser";
 import "./ChatRoomArea.css";
 import "./../conversation-style.css";
 export default function ChatRoomArea({ data, user, chat }) {
-  console.log(chat);
   return (
     <div className="msg__container">
       {chat && data ? (
@@ -12,7 +11,12 @@ export default function ChatRoomArea({ data, user, chat }) {
             <div key={i}>
               <div
                className={ user.uid === content.uid ? 'conversation__style__container right' : 'conversation__style__container left'}>
-                <p>{parse(content?.text)}</p>
+                <div className="msg__sender">
+                   { 
+user.uid !== content.uid ? content?.displayName :""
+ }
+                 </div>
+<p>{parse(content?.text)}</p>
               </div>
             </div>
           ))}{" "}
