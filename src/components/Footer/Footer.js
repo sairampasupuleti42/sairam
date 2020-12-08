@@ -31,7 +31,7 @@ function Footer({ user, onClick }) {
               onChange={queryChangeEvent}
               className="input"
             />
-            <button type="submit">Send</button>
+            <button type="submit" className="btn--send">Send</button>
           </form>
         </div>
       )}
