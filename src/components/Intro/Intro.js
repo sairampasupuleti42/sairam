@@ -33,7 +33,7 @@ export default function Intro(props) {
       <div className="intro__bottom">
         <div className="intro__getintouch"></div>
         <div className="intro__continue" onClick={handleClick}>
-          <div className="btn">Getting Started !</div>
+          <div className="btn">Click here to View !</div>
         </div>
       </div>
     </div>
