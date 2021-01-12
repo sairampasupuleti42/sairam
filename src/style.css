@@ -73,7 +73,7 @@ background-color: #dddbd1;
 }
 .app__room_area .app__conversation {
   padding: 25px !important;
-  height: 80%;
+  height: 74% !important;
   background-color: #dddbd1;
   overflow-y: scroll;
 }

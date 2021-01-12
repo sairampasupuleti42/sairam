@@ -29,7 +29,7 @@ function Contact({ user }) {
           </div>
         </div>
       ) : (
-        <h2 className="tempCSS"> Dummy text goes here </h2>
+        <h2 className="tempCSS"> Something new is on its way ... </h2>
       )}
     </div>
   );

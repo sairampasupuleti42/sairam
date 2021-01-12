@@ -22,7 +22,8 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import firebase from "firebase";
 import "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth"; 
+import default_profile from './assets/default_profile.jpg';
 export default function App() {
   // firebase
   const config = {
@@ -56,7 +57,7 @@ export default function App() {
       : false;
     setLeftHeader({
       avatar:
-        "https://scontent.fhyd6-1.fna.fbcdn.net/v/t1.0-1/cp0/p74x74/125879863_520913138867927_6648996237882099823_o.jpg?_nc_cat=103&ccb=2&_nc_sid=dbb9e7&_nc_ohc=JzuYLHhoPlUAX8R7PR1&_nc_ht=scontent.fhyd6-1.fna&tp=27&oh=96b2c97a207a20aaea603425a9dae54b&oe=5FE5DA9D",
+      default_profile,
       icon: ""
     });
   }, [localStorage]);
