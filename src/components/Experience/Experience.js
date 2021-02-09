@@ -33,10 +33,8 @@ applications by following reverse-engineering process`,
           <br/><strong>Cognizant</strong>`,
     multiLine: true,
     ans: [
-      `I have been working in association with Cognizant and
-Wells Fargo at<br/> their Hyderabad office. My experience in<br/>
-the organization has been in Wholesale Finance Lending<br/>
-Technology domain , as a Angular Developer
+      `Programmed a business intelligence solution for a banking industry client, which helped the client use its capital and manage risk
+more effectively.
 `,
       `Responsibilities in this project is to develop the Loan
 Availability Monitoring solution to <br/>support Wholesale
