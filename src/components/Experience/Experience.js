@@ -7,8 +7,9 @@ const data = [
           <br/><strong>Accenture</strong>`,
     multiLine: true,
     ans: [
-      `Reverse engineer potentially harmful chrome extensions<br/> to understand their operation and impact on Chrome ecosystem`,
+      `Reverse engineer potentially harmful chrome extensions(CRX distributions) <br/> to understand their operation and impact on Chrome ecosystem`,
       `Design soluions that enable identification of malware, spam, <br/>and other harmful content and perform data analysis`,
+       `Control-Flow analysis of webpacked javascript code`,
       `Deriving
 insight from our vast data stores and <br/> collaborate with cross-functional groups to increase automation, <br/>update policies,
  fix product loopholes, and provide better experience to Chrome users`,
