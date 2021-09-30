@@ -5,12 +5,14 @@ export default function Works() {
     {
       qus: ` Tesla Website Clone`,
       multiLine: true,
-      ans: [ `<strong>https://tesla-clone-by-sairam-zdbiar.stackblitz.io/</strong>`, ` Skills:HTML5, CSS Flex Design, React JS, React Styled Components, Redux(Incomplete)`]
+      ans: [ `<strong>https://tesla-clone-by-sairam-zdbiar.stackblitz.io/</strong>`, 
+             ` Skills: HTML5, CSS Flex Design, React JS, React Styled Components, Redux(Incomplete)`,
+             `GitHub Repo URL: https://github.com/sairampasupuleti42/tesla-clone-by-sairam-zdbiar`]
     }
   ];
   return (
     <div>
-      <ChatRoomArea/>
+      <ChatRoomArea data={data}/>
     </div>
   );
 }
