@@ -3,6 +3,11 @@ import ChatRoomArea from "./../ChatRoomArea/ChatRoomArea";
 import "./../conversation-style.css";
 const data = [
   {
+    qus: `Technical Lead <br/><strong>HCLTech</strong>`,
+    multiLine: true,
+    ans: []
+  },
+  {
     qus: `Software Engineering Analyst
           <br/><strong>Accenture</strong>`,
     multiLine: true,
