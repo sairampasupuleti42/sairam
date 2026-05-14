@@ -32,10 +32,12 @@ Your app is ready to be deployed!
 This project now includes a Firebase Cloud Function for the **My Assistant** page.
 
 1. Install the frontend dependencies with `npm install --legacy-peer-deps`
+   - The repo currently depends on older packages with peer dependency ranges that conflict with modern npm resolution, so the legacy flag is required for a clean install.
 2. Install the Cloud Functions dependencies with `cd functions && npm install`
 3. Configure the OpenAI secret for Firebase Functions:
    - `firebase functions:secrets:set OPENAI_API_KEY`
-4. Deploy hosting and functions with Firebase when ready.
+4. Optional: provide `REACT_APP_FIREBASE_*` environment variables at build time if you want to override the default Firebase web configuration per environment.
+5. Deploy hosting and functions with Firebase when ready.
 
 The assistant uses LangChain.js on the server side and answers guests with information grounded in Sairam's portfolio data.
 
