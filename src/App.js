@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
-  Switch,
   BrowserRouter as Router,
   Route,
-  Link,
-  useHistory,
-useLocation
 } from "react-router-dom";
 import "./style.css";
 import ChatRooms from "./components/ChatRooms/ChatRooms";
@@ -20,37 +16,19 @@ import { isMobile } from "react-device-detect";
 import Works from "./components/Works/Works";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import firebase from "firebase";
-import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth"; 
+import MyAssistant from "./components/MyAssistant/MyAssistant";
 import default_profile from './assets/default_profile.jpg';
+import { auth, googleProvider } from "./firebase";
 export default function App() {
-  // firebase
-  const config = {
-    apiKey: "AIzaSyDLMiQu-IrXiTsrEvFB5xZ4K50H7uZRrY0",
-    authDomain: "p-sairam.firebaseapp.com",
-    databaseURL: "https://p-sairam.firebaseio.com",
-    projectId: "p-sairam",
-    storageBucket: "p-sairam.appspot.com",
-    messagingSenderId: "588750147667",
-    appId: "1:588750147667:web:1e5846afc127d1db6ff6a6",
-    measurementId: "G-NFTF2EBC3H",
-  };
-  var provider = new firebase.auth.GoogleAuthProvider();
-  if (!firebase.apps.length) {
-    firebase.initializeApp(config);
-  }
-  const auth = firebase.auth();
   const [user] = useAuthState(auth);
   async function requestSignIn() {
-    await firebase.auth().signInWithPopup(provider);
+    await auth.signInWithPopup(googleProvider);
   }
-  // End firebase
   
   const [home, showHome] = useState(false);
   const [zIndexValue, setZIndexValue] = useState(0);
   const [leftHeader, setLeftHeader] = useState(null);
-  const [foo,setFoo] = useState("");
   useEffect(() => {
     localStorage["c2FpcmFtLXBhc3VwdWxldGk="] === "true"
       ? showHome(true)
@@ -60,7 +38,7 @@ export default function App() {
       default_profile,
       icon: ""
     });
-  }, [localStorage]);
+  }, []);
 
   return (
     <div>
@@ -130,6 +108,19 @@ export default function App() {
                     />
                     <div className="app__conversation">
                       <Experience />
+                    </div>
+                  </Route>
+                  <Route path="/my-assistant">
+                    <ChatHeader
+                      data={leftHeader}
+                      showName={true}
+                      showButton={true}
+                      title="My Assistant"
+                      handleIntroClick={catchIntroClick}
+                      getNewZIndex={handleMobileTouch}
+                    />
+                    <div className="app__conversation">
+                      <MyAssistant />
                     </div>
                   </Route>
                   <Route path="/education">
