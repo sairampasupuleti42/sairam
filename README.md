@@ -32,7 +32,7 @@ Your app is ready to be deployed!
 This project now includes a Firebase Cloud Function for the **My Assistant** page.
 
 1. Install the frontend dependencies with `npm install --legacy-peer-deps`
-   - The repo currently depends on older packages with peer dependency ranges that conflict with modern npm resolution, so the legacy flag is required for a clean install.
+   - The repo currently mixes React 17 with older packages such as Material UI v4, so modern npm peer dependency resolution fails without the legacy flag.
 2. Install the Cloud Functions dependencies with `cd functions && npm install`
 3. Configure the OpenAI secret for Firebase Functions:
    - `firebase functions:secrets:set OPENAI_API_KEY`

@@ -26,13 +26,12 @@ export default function App() {
     await auth.signInWithPopup(googleProvider);
   }
   
-  const [home, showHome] = useState(false);
+  const [home, showHome] = useState(
+    localStorage["c2FpcmFtLXBhc3VwdWxldGk="] === "true"
+  );
   const [zIndexValue, setZIndexValue] = useState(0);
   const [leftHeader, setLeftHeader] = useState(null);
   useEffect(() => {
-    localStorage["c2FpcmFtLXBhc3VwdWxldGk="] === "true"
-      ? showHome(true)
-      : false;
     setLeftHeader({
       avatar:
       default_profile,
