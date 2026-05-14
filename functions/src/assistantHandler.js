@@ -8,6 +8,8 @@ const { defineSecret } = require("firebase-functions/params");
 const { sairamContext } = require("./sairamContext");
 
 const openAiApiKey = defineSecret("OPENAI_API_KEY");
+const MAX_MESSAGE_LENGTH = 700;
+const MAX_HISTORY_ITEMS = 12;
 
 const assistantPrompt = ChatPromptTemplate.fromMessages([
   [
@@ -24,7 +26,7 @@ exports.askAssistant = onCall(
     maxInstances: 10,
   },
   async (request) => {
-    const message = sanitizeMessage(request.data?.message, 700);
+    const message = sanitizeMessage(request.data?.message, MAX_MESSAGE_LENGTH);
     if (!message) {
       throw new HttpsError("invalid-argument", "A valid message is required.");
     }
@@ -71,8 +73,8 @@ function normalizeHistory(history) {
     return [];
   }
 
-  return history.slice(-12).reduce((messages, item) => {
-    const content = sanitizeMessage(item?.content, 700);
+  return history.slice(-MAX_HISTORY_ITEMS).reduce((messages, item) => {
+    const content = sanitizeMessage(item?.content, MAX_MESSAGE_LENGTH);
     if (!content) {
       return messages;
     }
