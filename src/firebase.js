@@ -4,6 +4,7 @@ import "firebase/firestore";
 import "firebase/functions";
 
 const config = {
+  // Firebase web config is public-facing by design; env vars allow per-environment overrides.
   apiKey:
     process.env.REACT_APP_FIREBASE_API_KEY ||
     "AIzaSyDLMiQu-IrXiTsrEvFB5xZ4K50H7uZRrY0",

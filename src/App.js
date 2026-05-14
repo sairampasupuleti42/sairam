@@ -21,9 +21,11 @@ import MyAssistant from "./components/MyAssistant/MyAssistant";
 import default_profile from './assets/default_profile.jpg';
 import { auth, googleProvider } from "./firebase";
 
+const PORTFOLIO_HOME_PREFERENCE_KEY = "c2FpcmFtLXBhc3VwdWxldGk=";
+
 function getStoredHomePreference() {
   try {
-    return localStorage.getItem("c2FpcmFtLXBhc3VwdWxldGk=") === "true";
+    return localStorage.getItem(PORTFOLIO_HOME_PREFERENCE_KEY) === "true";
   } catch (error) {
     return false;
   }
@@ -31,7 +33,7 @@ function getStoredHomePreference() {
 
 function hasStoredHomePreference() {
   try {
-    return localStorage.getItem("c2FpcmFtLXBhc3VwdWxldGk=") !== null;
+    return localStorage.getItem(PORTFOLIO_HOME_PREFERENCE_KEY) !== null;
   } catch (error) {
     return false;
   }
@@ -39,7 +41,7 @@ function hasStoredHomePreference() {
 
 function setStoredHomePreference(value) {
   try {
-    localStorage.setItem("c2FpcmFtLXBhc3VwdWxldGk=", value);
+    localStorage.setItem(PORTFOLIO_HOME_PREFERENCE_KEY, value);
   } catch (error) {}
 }
 
