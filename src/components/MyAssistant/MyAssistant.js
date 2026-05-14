@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./MyAssistant.css";
 import "./../conversation-style.css";
 import { functions } from "./../../firebase";
@@ -22,7 +22,7 @@ export default function MyAssistant() {
   const [inputValue, setInputValue] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
-  const askAssistant = useMemo(() => functions.httpsCallable("askAssistant"), []);
+  const askAssistant = functions.httpsCallable("askAssistant");
 
   useEffect(() => {
     if (messagesEndRef.current) {

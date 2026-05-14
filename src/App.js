@@ -20,15 +20,36 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import MyAssistant from "./components/MyAssistant/MyAssistant";
 import default_profile from './assets/default_profile.jpg';
 import { auth, googleProvider } from "./firebase";
+
+function getStoredHomePreference() {
+  try {
+    return localStorage.getItem("c2FpcmFtLXBhc3VwdWxldGk=") === "true";
+  } catch (error) {
+    return false;
+  }
+}
+
+function hasStoredHomePreference() {
+  try {
+    return localStorage.getItem("c2FpcmFtLXBhc3VwdWxldGk=") !== null;
+  } catch (error) {
+    return false;
+  }
+}
+
+function setStoredHomePreference(value) {
+  try {
+    localStorage.setItem("c2FpcmFtLXBhc3VwdWxldGk=", value);
+  } catch (error) {}
+}
+
 export default function App() {
   const [user] = useAuthState(auth);
   async function requestSignIn() {
     await auth.signInWithPopup(googleProvider);
   }
   
-  const [home, showHome] = useState(
-    localStorage["c2FpcmFtLXBhc3VwdWxldGk="] === "true"
-  );
+  const [home, showHome] = useState(getStoredHomePreference);
   const [zIndexValue, setZIndexValue] = useState(0);
   const [leftHeader, setLeftHeader] = useState(null);
   useEffect(() => {
@@ -206,13 +227,13 @@ export default function App() {
     auth.signOut();
   }
   function moveToHome(e) {
-    localStorage["c2FpcmFtLXBhc3VwdWxldGk="] = e;
+    setStoredHomePreference(e);
     showHome(e);
   }
   function catchIntroClick(e) {
     showHome(e);
-    if (localStorage["c2FpcmFtLXBhc3VwdWxldGk="]) {
-      localStorage["c2FpcmFtLXBhc3VwdWxldGk="] = e;
+    if (hasStoredHomePreference()) {
+      setStoredHomePreference(e);
       window.location.href = "/";
     }
   }

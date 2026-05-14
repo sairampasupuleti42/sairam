@@ -8,6 +8,7 @@ const { defineSecret } = require("firebase-functions/params");
 const { sairamContext } = require("./sairamContext");
 
 const openAiApiKey = defineSecret("OPENAI_API_KEY");
+// Keep prompts compact to control token usage and response latency for guest chats.
 const MAX_MESSAGE_LENGTH = 700;
 const MAX_HISTORY_ITEMS = 12;
 
