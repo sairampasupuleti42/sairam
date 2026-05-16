@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import default_profile from './../assets/default_profile.jpg';
 function Default(props) {
   return (
@@ -11,6 +12,9 @@ function Default(props) {
       </div>
       <div className="impl__soon">
           <p> More, will be implemented in the way 🤘</p>
+          <p style={{marginTop: 20 +'px'}}>
+            Meet <Link to="/my-assistant"><strong>My Assistant</strong></Link> to quickly explore Sairam's profile.
+          </p>
           <p style={{marginTop: 30 +'px'}}> Build #30092021235200, <a href="https://github.com/sairampasupuleti42/sairam/commits/master" target="_blank"> Click here </a> to view recent Commits/ <a href="https://github.com/sairampasupuleti42/sairam/actions" target="_blank"> GitHub Actions </a> </p>
           <p style={{marginTop: 30 +'px'}}> Get in touch on <a target="_blank" href="https://www.linkedin.com/in/sairampasupuleti">
                <strong>LinkedIn</strong> </a></p>
