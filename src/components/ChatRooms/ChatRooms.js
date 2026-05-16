@@ -6,6 +6,7 @@ import education from "./../../assets/education.png";
 import experience from "./../../assets/experience.png";
 import contact from "./../../assets/contact.png";
 import works from "./../../assets/works.png";
+import assistant from "./../../assets/assistant.svg";
 
 import "./ChatRooms.css";
 export default function ChatRooms({ getClickForMobileAction }) {
@@ -17,6 +18,14 @@ export default function ChatRooms({ getClickForMobileAction }) {
       unread: 0,
       path: "about-me",
       icon: about,
+    },
+    {
+      name: "My Assistant",
+      message: "Ask about Sairam",
+      timestamp: "",
+      unread: 0,
+      path: "my-assistant",
+      icon: assistant,
     },
     {
       name: "Experience",

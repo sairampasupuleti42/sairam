@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Contact.css";
 import ChatRoomArea from "./../ChatRoomArea/ChatRoomArea";
-import firebase from "firebase";
+import { firestore } from "./../../firebase";
 function Contact({ user }) {
   const [queries, setQueries] = useState();
   useEffect(() => {
-    const firestore = firebase.firestore();
     return firestore.collection("queries").orderBy("createdAt").onSnapshot((snapshot) => {
       const postData = [];
       snapshot.forEach((doc) => postData.push({ ...doc.data(), id: doc.id }));

@@ -27,6 +27,20 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+## My Assistant setup
+
+This project now includes a Firebase Cloud Function for the **My Assistant** page.
+
+1. Install the frontend dependencies with `npm install --legacy-peer-deps`
+   - The repo currently mixes React 17 with older packages such as Material UI v4, so modern npm peer dependency resolution fails without the legacy flag.
+2. Install the Cloud Functions dependencies with `cd functions && npm install`
+3. Configure the OpenAI secret for Firebase Functions:
+   - `firebase functions:secrets:set OPENAI_API_KEY`
+4. Optional: provide `REACT_APP_FIREBASE_*` environment variables at build time if you want to override the default Firebase web configuration per environment.
+5. Deploy hosting and functions with Firebase when ready.
+
+The assistant uses LangChain.js on the server side and answers guests with information grounded in Sairam's portfolio data.
+
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`

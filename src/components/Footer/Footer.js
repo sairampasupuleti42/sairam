@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import firebase from "firebase";
-import "firebase/auth";
 import "./Footer.css";
 import glogo from "./../../assets/g-logo.png";
-import "firebase/firestore";
-import { useCollectionData } from "react-firebase-hooks/firestore";
+import { firestore, serverTimestamp } from "./../../firebase";
 function Footer({ user, onClick }) {
-  const firestore = firebase.firestore();
   const queriesRef = firestore.collection("queries");
   const [queryValue, setQueryValue] = useState("");
   function handleChatSignIn(e) {
@@ -49,7 +45,7 @@ function Footer({ user, onClick }) {
       uid,
       photoURL,
       displayName,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: serverTimestamp(),
     }).then(res=>{
       setQueryValue("");
     })
