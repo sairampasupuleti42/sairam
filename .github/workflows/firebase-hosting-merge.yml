@@ -12,6 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
+      - name: Install functions dependencies
+        run: cd functions && npm ci
+      - uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_P_SAIRAM }}'
+      - name: Deploy Firebase Functions
+        run: npx firebase-tools deploy --only functions --project p-sairam
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
