@@ -1,84 +1,122 @@
-# Getting Started Digital resume with React
+# Sairam Pasupuleti — Digital Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio website built with React, styled as a chat/messaging UI. Visitors can browse sections such as About, Experience, Education, Skills, Works, and Contact, and can also chat with an AI assistant powered by Firebase Cloud Functions and LangChain.js.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 17, React Router v5, Material UI v4 |
+| Realtime / Auth | Firebase (Firestore, Authentication) |
+| Backend | Firebase Cloud Functions (Node 20) |
+| AI Assistant | LangChain.js + OpenAI via Firebase Functions |
+| Hosting | Firebase Hosting |
 
-### `npm start`
+## Portfolio Sections
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Route | Description |
+|-------|-------------|
+| `/` | Landing / intro screen |
+| `/about-me` | Career objective, profile summary, resume download, strengths & interests |
+| `/experience` | Work history |
+| `/education` | Academic background |
+| `/skills` | Technical skills |
+| `/works` | Projects & works |
+| `/contact` | Contact form with Google sign-in |
+| `/my-assistant` | AI chat assistant grounded in portfolio data |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 18+ (Node 20 recommended for Cloud Functions)
+- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
 
-### `npm run build`
+### Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Frontend
+npm install --legacy-peer-deps
+# The project mixes React 17 with Material UI v4, so the legacy peer-deps
+# flag is required with modern npm.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Cloud Functions
+cd functions && npm install
+```
 
-## My Assistant setup
+### Run locally
 
-This project now includes a Firebase Cloud Function for the **My Assistant** page.
+```bash
+npm start
+```
 
-1. Install the frontend dependencies with `npm install --legacy-peer-deps`
-   - The repo currently mixes React 17 with older packages such as Material UI v4, so modern npm peer dependency resolution fails without the legacy flag.
-2. Install the Cloud Functions dependencies with `cd functions && npm install`
-3. Configure the OpenAI secret for Firebase Functions:
-   - `firebase functions:secrets:set OPENAI_API_KEY`
-4. Optional: provide `REACT_APP_FIREBASE_*` environment variables at build time if you want to override the default Firebase web configuration per environment.
-5. Deploy hosting and functions with Firebase when ready.
+Opens [http://localhost:3000](http://localhost:3000) in the browser. The page hot-reloads on every save.
 
-The assistant uses LangChain.js on the server side and answers guests with information grounded in Sairam's portfolio data.
+### Run tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm test
+```
 
-### `npm run eject`
+### Build for production
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run build
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Produces an optimised production bundle in the `build/` folder, ready for Firebase Hosting.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## My Assistant Setup
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The **My Assistant** page (`/my-assistant`) is backed by a Firebase Cloud Function (`askAssistant`) that uses LangChain.js to answer questions about the portfolio.
 
-## Learn More
+1. **Authenticate with Firebase**
+   ```bash
+   firebase login
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Set the OpenAI API key** as a Firebase secret:
+   ```bash
+   firebase functions:secrets:set OPENAI_API_KEY
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. *(Optional)* Override the Firebase web configuration at build time by providing `REACT_APP_FIREBASE_*` environment variables.
 
-### Code Splitting
+4. **Deploy functions and hosting**:
+   ```bash
+   firebase deploy
+   ```
+   Or deploy separately:
+   ```bash
+   firebase deploy --only functions
+   firebase deploy --only hosting
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+├── public/                  Static assets served by Create React App
+├── src/
+│   ├── App.js               Root component with routing
+│   ├── firebase.js          Firebase app initialisation
+│   ├── components/
+│   │   ├── About/           About me section
+│   │   ├── ChatHeader/      Top navigation bar for each section
+│   │   ├── ChatRooms/       Sidebar with section links
+│   │   ├── Contact/         Contact form
+│   │   ├── Education/       Education section
+│   │   ├── Experience/      Work experience section
+│   │   ├── Footer/          Footer with sign-in action
+│   │   ├── Intro/           Landing / intro screen
+│   │   ├── MyAssistant/     AI chat assistant
+│   │   ├── Skills/          Skills section
+│   │   └── Works/           Projects section
+│   └── assets/              Images and other static assets
+├── functions/
+│   └── src/
+│       ├── index.js         Cloud Functions entry point
+│       ├── assistantHandler.js  askAssistant function logic
+│       └── sairamContext.js     Portfolio context fed to the LLM
+├── firebase.json            Firebase Hosting & Functions config
+└── package.json
+```
