@@ -63,4 +63,14 @@
     font-size: smaller;
     line-height: 1.6;
   }
+
+  .chat__rooms .user a.active__room {
+    display: block;
+    background-color: #f0ebf8;
+    border-left: 3px solid #463261;
+  }
+
+  .chat__rooms .user a.active__room .info {
+    padding-left: 7px;
+  }
   

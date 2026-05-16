@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ChatHeader.css";
-import { FaEllipsisV } from "react-icons/fa";
+import { FaEllipsisV, FaArrowLeft } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import about from "./../../assets/about.png";
 import skills from "./../../assets/skills.png";
@@ -24,16 +24,37 @@ export default function ChatHeader({
   showLogoutButton,
 }) {
   const [dropdown, openDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        openDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="chat__header">
-      <Link to="/">
-        {!showName ? (
-          <img className="avatar" src={data?.avatar} />
-        ) : (
-          <img className="avatar" src={getRouteIcon(title)} />
-        )}
-      </Link>
+      {isMobile && getNewZIndex ? (
+        <button
+          className="chat__header__back"
+          aria-label="Go back"
+          onClick={goBack}
+        >
+          <FaArrowLeft />
+        </button>
+      ) : (
+        <Link to="/">
+          {!showName ? (
+            <img className="avatar" src={data?.avatar} alt="Sairam Pasupuleti" />
+          ) : (
+            <img className="avatar" src={getRouteIcon(title)} alt={title} />
+          )}
+        </Link>
+      )}
       <div className="chat__header__content">
         {showName ? <div className="title">{title}</div> : ""}
         {mobileResTitle ? <div className="title2">{mobileResTitle}</div> : ""}
@@ -41,22 +62,18 @@ export default function ChatHeader({
       </div>
       {showButton ? (
         <div className="chat__header__menu">
-          <div className="dropdown">
+          <div className="dropdown" ref={dropdownRef}>
             <span>
-              <FaEllipsisV className="button" onClick={toggleDropdown} />
+              <FaEllipsisV
+                className="button"
+                aria-label="Open menu"
+                onClick={toggleDropdown}
+              />
             </span>
             <ul
               className="dropdown-content"
               style={{ display: dropdown ? "block" : "" }}
             >
-              {isMobile && getNewZIndex ? (
-                <li>
-                  {" "}
-                  <span onClick={goBack}>Back</span>
-                </li>
-              ) : (
-                ""
-              )}
               <li>
                 {" "}
                 <span onClick={gotoIntro}>Home</span>

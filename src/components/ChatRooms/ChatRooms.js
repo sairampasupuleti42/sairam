@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import about from "./../../assets/about.png";
 import skills from "./../../assets/skills.png";
 import education from "./../../assets/education.png";
@@ -31,7 +31,7 @@ export default function ChatRooms({ getClickForMobileAction }) {
       name: "Experience",
       message: "",
       timestamp: "",
-      unread: 4,
+      unread: 0,
       path: "experience",
       icon: experience,
     },
@@ -72,11 +72,11 @@ export default function ChatRooms({ getClickForMobileAction }) {
     <div className="chat__rooms">
       {roomData.map((data, i) => (
         <div key={i} className="user">
-          <Link to={`/${data.path}`} onClick={handleClick}>
-            <div className="info">
-              <div className="avatar">
-                <img src={data.icon} />
-              </div>
+          <NavLink to={`/${data.path}`} activeClassName="active__room" onClick={handleClick}>
+              <div className="info">
+                <div className="avatar">
+                  <img src={data.icon} alt={data.name} />
+                </div>
               <div className="content">
                 <div className="unknown__class">
                   <div className="name">{data.name}</div>
@@ -90,7 +90,7 @@ export default function ChatRooms({ getClickForMobileAction }) {
                 </div>
               </div>
             </div>
-          </Link>
+          </NavLink>
         </div>
       ))}
     </div>

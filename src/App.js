@@ -181,7 +181,6 @@ export default function App() {
                       title="Works"
                       handleIntroClick={catchIntroClick}
                       getNewZIndex={handleMobileTouch}
-                      wip={true}
                     />{" "}
                     <div className="app__conversation">
                       <Works />

@@ -6,6 +6,17 @@
     place-content: flex-start;
     padding: 10px;
     border-bottom: 1px solid rgba(88, 88, 88, 0.06);
+    align-items: center;
+  }
+  .chat__header__back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #463261;
+    font-size: 20px;
+    padding: 4px 10px 4px 4px;
+    display: flex;
+    align-items: center;
   }
   .chat__header .avatar {
     width: 50px;
